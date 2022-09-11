@@ -160,17 +160,28 @@ app.patch("/students/:id", async (req, res) => {
     }
 });
 
+// 刪除資料 API DELETE
 app.delete("/students/delete/:id", (req, res) => {
     let {id} = req.params;
     Student.deleteOne({id}).then((meg) => {
         console.log(meg);
         console.log(`學號:${id} 刪除成功`);
-        res.redirect("/students");
+        res.send({message: `學號:${id} 刪除成功`});
     }).catch((e) => {
         res.status(500);
-        res.send(`學號:${id} 刪除失敗`);
+        res.send({message: `學號:${id} 刪除失敗`});
     });
 })
+
+// 刪除全部資料 API
+app.delete("/students/delete", (req, res) => {
+    Student.deleteMany({}).then((meg) => {
+        res.send("全部資料刪除成功");
+    }).catch((e) => {
+        res.send("全部資料刪除失敗");
+        console.log(e);
+    });
+});
 
 // 網頁伺服器
 app.listen(3000, () => {
