@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= data.name %> Page
+    </title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>欄位</th>
+            <th>資料</th>
+        </tr>
+        <tr>
+            <td>學號</td>
+            <td>
+                <%= data.id %>
+            </td>
+        </tr>
+        <tr>
+            <td>姓名</td>
+            <td>
+                <%= data.name %>
+            </td>
+        </tr>
+        <tr>
+            <td>年齡</td>
+            <td>
+                <%= data.age %>
+            </td>
+        </tr>
+        <tr>
+            <td>獎學金</td>
+            <td>
+                <%= data.scholarship.merit + data.scholarship.other %> (
+                    <%= data.scholarship.merit %> +
+                        <%= data.scholarship.other %>)
+            </td>
+        </tr>
+    </table>
+    <a href="/students/">Back to Students List.</a>
+    <br>
+    <a href="/students/edit/<%= data.id %> ">Edit</a>
+</body>
+
+</html>

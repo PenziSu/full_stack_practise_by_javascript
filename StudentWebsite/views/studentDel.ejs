@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= data.name %> Delete ?
+    </title>
+</head>
+
+<body>
+    <form action="/students/delete/<%= data.id %>?_method=DELETE" method="post">
+        <table>
+            <tr>
+                <th>欄位</th>
+                <th>資料</th>
+            </tr>
+            <tr>
+                <td>學號</td>
+                <td>
+                    <%= data.id %>
+                </td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td>
+                    <%= data.name %>
+                </td>
+            </tr>
+            <tr>
+                <td>年齡</td>
+                <td>
+                    <%= data.age %>
+                </td>
+            </tr>
+            <tr>
+                <td>獎學金</td>
+                <td>
+                    <%= data.scholarship.merit + data.scholarship.other %> (
+                        <%= data.scholarship.merit %> +
+                            <%= data.scholarship.other %>)
+                </td>
+            </tr>
+        </table>
+        <H1>是否確定刪除?</H1>
+        <br>
+        <input type="submit" value="確定">
+        <input type="button" onclick="location.href='/students'" value="取消">
+    </form>
+
+</body>
+
+</html>

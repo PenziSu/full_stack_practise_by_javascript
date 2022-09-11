@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <H1>Common Popular Languanges</H1>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>rating</th>
+            <th>popularity</th>
+            <th>trending</th>6+
+        </tr>
+        <% languages.forEach(langs =>{ %> 
+            <tr>
+                <td><%= langs.name %></td>
+                <td><%= langs.rating %></td>
+                <td><%= langs.papularity %></td>
+                <td><%= langs.trending %></td>
+            </tr>            
+        <%  }) %>
+    </table>
+    
+</body>
+</html>

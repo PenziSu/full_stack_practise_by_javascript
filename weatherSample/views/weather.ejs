@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= djs.name %> - <%= djs.sys.country%></title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <H1><%= djs.name %> Weather Now!</H1>
+    <table>
+        <tr>
+            <th>CITY</th>
+            <th>COUNTRY</th>
+            <th>TEMP</th>
+            <th>CLOUD</th>
+        </tr>
+        <tr>
+            <td><%= djs.name %></td>
+            <td><%= djs.sys.country %></td>
+            <td><%= tempC %></td>
+            <td><%= djs.weather[0].main %></td>
+        </tr>
+
+    </table>
+</body>
+</html>

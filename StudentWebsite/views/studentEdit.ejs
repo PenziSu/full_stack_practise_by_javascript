@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Edit</title>
+</head>
+
+<body>
+    <form action="/students/edit/<%= data.id %>?_method=PUT" method="post">
+        <label for="id">學號:</label>
+        <input type="number" id="id" name="id" value="<%= data.id %>">
+        <br>
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name" value="<%= data.name %>">
+        <br>
+        <label for="age">年齡:</label>
+        <input type="number" id="age" name="age" value="<%= data.age %>">(MAX:80)
+        <br>
+        <label for="merit">獎學金:</label>
+        <input type="number" id="merit" name="merit" value="<%= data.scholarship.merit %>">(MAX:5000)
+        <br>
+        <label for="other">其他:</label>
+        <input type="number" id="other" name="other" value="<%= data.scholarship.other %>">
+        <br>
+        <input type="submit" value="修改">
+        <input type="button" onclick="location.href='/students/delete/<%= data.id  %>?_method=DELETE'" value="刪除">
+    </form>
+</body>
+
+</html>
